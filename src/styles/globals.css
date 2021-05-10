@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+input::placeholder {
+  color: white;
+}
+
+.slick-dots li.slick-active a span {
+  background-color: #ff0d20;
+}
