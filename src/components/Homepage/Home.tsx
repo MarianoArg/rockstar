@@ -9,11 +9,11 @@ import Slider from 'react-slick';
 
 export default function Homepage() {
   const [params, setParams] = React.useState<Record<string, unknown>>({ sort_by: 'popularity.desc' });
-  const { data, isFetching } = useDiscoverMovies({
+  const { data } = useDiscoverMovies({
     ...params,
     include_video: 'true',
   });
-  const { data: trendingData, isFetching: isTrendingFetching } = useTrending('movie', 'week');
+  const { data: trendingData } = useTrending('movie', 'week');
   const movieList = data?.results || [];
   const trendingList = (trendingData?.results || []).filter((item) => item.poster_path);
   const settings = {
@@ -26,7 +26,7 @@ export default function Homepage() {
     slidesToShow: 1,
     slidesToScroll: 1,
     dotsClass: 'slick-dots slick-thumb',
-    customPaging: function Dot(i) {
+    customPaging: function Dot() {
       return (
         <a className="h-1 block">
           <span className="h-full bg-opacity-80 bg-gray-600 block rounded-lg"></span>

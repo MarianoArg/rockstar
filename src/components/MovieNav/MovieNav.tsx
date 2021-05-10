@@ -7,8 +7,8 @@ interface Props {
   onNav: (data: { name: string; value: string | number }) => void;
 }
 
-export default function MovieNav({ onNav }) {
-  const { data, isFetching } = useGenres();
+export default function MovieNav({ onNav }: Props) {
+  const { data } = useGenres();
   const genresOptions = (data?.genres ?? []).map((genre) => ({ label: genre.name, value: genre.id }));
 
   const handleNav = React.useCallback(
