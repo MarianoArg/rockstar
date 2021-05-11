@@ -8,7 +8,7 @@ export const searchMovies = async (query: string) => {
 };
 
 type Response = {
-  results: Movie[];
+  results: Partial<Movie>[];
   page: number;
   total_pages: number;
   total_results: number;

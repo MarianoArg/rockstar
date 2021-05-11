@@ -47,8 +47,8 @@ export default function Homepage() {
             <SlideCard data={item} key={item.id} />
           ))}
         </Slider>
-        <div className="absolute top-20 p-8 flex items-center">
-          <h2 className="text-white font-semibold text-4xl drop-shadow-xl underline">This week</h2>
+        <div className="absolute top-20 p-2 m-6 flex items-center border-4 shadow-lg">
+          <h2 className="text-white font-semibold text-4xl drop-shadow-xl">This week</h2>
           <span className="text-vibeRed drop-shadow-xl text-4xl ml-2">
             <AiFillFire />
           </span>

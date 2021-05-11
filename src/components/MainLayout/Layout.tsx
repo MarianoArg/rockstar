@@ -7,7 +7,7 @@ interface Props {
 
 export default function MainLayout({ children }: Props) {
   return (
-    <main className="flex flex-col w-full min-h-screen overflow-hidden">
+    <main className="flex flex-col w-full min-h-screen overflow-hidden relative bg-bgPurple">
       <Header />
       {children}
     </main>

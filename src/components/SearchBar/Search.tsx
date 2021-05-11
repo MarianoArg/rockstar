@@ -28,13 +28,15 @@ export default function SearchBar({ onChange, onSearch }: Props) {
 
   React.useEffect(() => {
     const params = new URLSearchParams();
-    if (query || prevParams) {
-      params.append('query', query ?? prevParams);
+    if (query && dirty) {
+      params.append('query', query);
     } else {
       params.delete('query');
     }
-    history.push({ pathname: '/search', search: params.toString() });
-  }, [query, history, prevParams]);
+    if (dirty) {
+      history.push({ pathname: '/search', search: params.toString() });
+    }
+  }, [query, history, dirty]);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -75,6 +77,7 @@ export default function SearchBar({ onChange, onSearch }: Props) {
       setQuery('');
       inputRef.current.focus();
       setDirty(false);
+      history.push({ search: '' });
     }
   };
 

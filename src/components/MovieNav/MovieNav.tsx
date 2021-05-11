@@ -22,7 +22,7 @@ export default function MovieNav({ onNav }: Props) {
 
   return (
     <div className="py-6">
-      <div className="flex mb-4 space-x-6">
+      <div className="flex flex-col mb-4 space-y-2 sm:flex-row sm:space-x-6 sm:space-y-0">
         <Select
           label="Sort by"
           name="sort_by"

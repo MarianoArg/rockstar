@@ -11,7 +11,7 @@ export const trendingMedia = async (mediaType: Mediatype, timeWindow: TimeWindow
 };
 
 type Response = {
-  results: Movie[];
+  results: Partial<Movie>[];
   page: number;
   total_pages: number;
   total_results: number;

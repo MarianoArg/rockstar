@@ -12,7 +12,7 @@ export default function SearchPage() {
 
   React.useEffect(() => {
     if (!params && document) {
-      history.push(document.referrer);
+      history.push(document.referrer ?? '/');
     }
   }, [params, history]);
 

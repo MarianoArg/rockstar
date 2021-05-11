@@ -1,6 +1,6 @@
+import { Link, useLocation } from 'react-router-dom';
 import { MdPageview, MdStar } from 'react-icons/md';
 
-import { Link } from 'react-router-dom';
 import { Movie } from '@/types/movies';
 import Rating from './Rating';
 import React from 'react';
@@ -14,14 +14,19 @@ export default function Card({ data = {} }: Props) {
   const [hoverActive, setHoverActive] = React.useState<boolean>(false);
   const baseURL = process.env.REACT_APP_IMAGE_BASE_URL;
   const date = new Date(data?.release_date ?? '');
-
+  const location = useLocation();
   return (
     <div
       className="w-full font-sans cursor-pointer"
       onMouseEnter={() => setHoverActive(true)}
       onMouseLeave={() => setHoverActive(false)}
     >
-      <Link to={`/detail/${data.id}`}>
+      <Link
+        to={{
+          pathname: `/detail/${data.id}`,
+          state: { background: location },
+        }}
+      >
         <div className="relative rounded-lg overflow-hidden w-full shadow-lg pb-card bg-gray-900 bg-opacity-40 hover:ring-2 ring-vibeRed transform motion-safe:hover:scale-110 box-border">
           <img
             className="absolute object-cover h-full w-full"

@@ -39,7 +39,7 @@ export default function Select({ label, name, onChange, options = [] }: Props) {
             </option>
           ))}
         </select>
-        <span className="absolute right-0 text-vibeRed">
+        <span className="absolute right-0 top-0 bottom-0 text-vibeRed flex items-center">
           <MdExpandMore />
         </span>
       </div>
