@@ -45,3 +45,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Deployment
 The app is configured to automatically be deployed using [Vercel](https://vercel.com/).
 
+
+## Improvements
+As this was a challenge developed in a short period of time, several improvements were left behind, like a better UI with loading and error indicators, probably adding a debounce on the search, adding pagination, better responsiveness for mobile, adding tests, etc.  
