@@ -6,13 +6,14 @@ import { useSearchMovies } from '@/hooks/movies';
 
 export default function SearchPage() {
   const history = useHistory();
-  const params = new URLSearchParams(useLocation().search).get('query');
+  const location = useLocation();
+  const params = new URLSearchParams(location.search).get('query');
   const { data, isFetching } = useSearchMovies({ query: params || '' });
   const movieList = data?.results || [];
 
   React.useEffect(() => {
-    if (!params && document) {
-      history.push(document.referrer ?? '/');
+    if (!params && window) {
+      history.push('/');
     }
   }, [params, history]);
 

@@ -34,7 +34,7 @@ export default function SearchBar({ onChange, onSearch }: Props) {
       params.delete('query');
     }
     if (dirty) {
-      history.push({ pathname: '/search', search: params.toString() });
+      history.push({ pathname: '/search', search: params.toString() }, { prevPath: location.pathname });
     }
   }, [query, history, dirty]);
 
