@@ -14,10 +14,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Running the project
 
-After cloning the repo, install the dependencies
+After cloning the repo, run
+
+### `yarn install`
+Install the dependencies for running the project, you can also use npm with
 ```
-yarn install
-or
 npm install
 ```
 
