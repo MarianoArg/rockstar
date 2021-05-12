@@ -22,7 +22,7 @@ Install the dependencies for running the project, you can also use npm with
 npm install
 ```
 
-Using the `.env.example` add your API keys from https://www.themoviedb.org/ and the rest of environment variables to your own `.env` file.
+**Important**: Using the `.env.example` add your API keys from https://www.themoviedb.org/ and the rest of environment variables to your own `.env` file.
 
 
 ### `yarn start`
